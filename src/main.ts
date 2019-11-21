@@ -1,3 +1,5 @@
+// the bootstrap file that starts the applciation, define the platform environment here Browser
+
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
