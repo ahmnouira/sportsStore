@@ -2,10 +2,13 @@
 
   <div class="row">
     <div class="col">
-    <h1 class="pl-4 font-weight-bolder">
-      <a href="#" class="navbar-brand"> Welcome to SPORT STORE </a>
-    </h1>
-  </div> 
+      <h1 class="pl-4 font-weight-bolder">
+        <a href="#" class="navbar-brand"> Welcome to SPORT STORE </a>
+      </h1>
+    </div>
+    <div class="col">
+        <app-cart-summary></app-cart-summary>
+    </div> 
   </div>
 
   <div class="row mt-2">
@@ -16,17 +19,18 @@
       </button>
     </div>
     <div class="col-md-8">
-            <div *ngFor="let product of products" class="mb-2 media bg-light">
-              <img class="img-thumbnail m-3" src="/assets/store/{{product.image}}" width="130" height="130"> 
-              <div class="media-body m-3">
-              <h3> {{ product.name}}
-                <span class="badge badge-pill badge-warning float-right m-1">
-                  {{ product.price | currency:"USD":"symbol":"2.2-2" }}
-                </span>
-              </h3>
-              <h5 class="p-1"> {{ product.description }} </h5>
-            </div>
-            </div>
+      <div *ngFor="let product of products" class="mb-2 media bg-light">
+        <img class="img-thumbnail m-3" src="/assets/store/{{product.image}}" width="130" height="130"> 
+        <div class="media-body m-3">
+          <h3> {{ product.name}}
+            <span class="badge badge-pill badge-warning float-right m-1">
+              {{ product.price | currency:"USD":"symbol":"2.2-2" }}
+            </span>
+          </h3>
+          <h5 class="p-1"> {{ product.description }} </h5>
+          <button class="btn btn-info btn-sum float-right" (click)="addProductToChart(product)"> Add To Cart</button>
+        </div>
+      </div>
 
             <div class="form-inline float-left">
               <select class="form-control" name="" [value]="productsPerPage" (change)="changePageSize($event.target.value)">

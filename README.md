@@ -2,9 +2,13 @@
  
 * Create a simple realistic e-commerce application online store for sport products.
 
+* This application supports a shopping cart.
+
 ## Overview 
 
-![img](/img/index.png)
+![index](/img/index.png)
+
+![cart](/img/cart.png)
 
 ## Development server
 

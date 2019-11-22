@@ -1,0 +1,62 @@
+<div class="container bg-light">
+
+    <div class="row">
+        <div class="col">
+        <h1 class="pl-4 font-weight-bolder">
+            <a href="#" class="navbar-brand"> SPORTS STORE </a>
+            </h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col mt-2">
+            <h2 class="text-center text-success">Your Cart</h2>
+            <table class="table table-bordered table-hover table-hover p-2">
+                <thead>
+                    <tr>
+                        <th>Quantity</th>
+                        <th>Image</th>
+                        <th>Product</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-right">Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngIf="cart.lines.length == 0">
+                        <td colspan="5" class="text-center">
+                            Your cart is empty
+                        </td>
+                    </tr>
+                    <tr *ngFor="let line of cart.lines">
+                        <td>
+                            <input type="number" min="0" class="form-control" style="width: 5em" [value]="line.quantity" (change)="cart.updateQuantity(line.product, $event.target.value)">
+                        </td>
+                        <td class="text-center"><img class="img-thumbnail" src="assets/store/{{line.product.image}}" width="80" height="60"></td>
+                        <td>{{line.product.name}}</td>
+                        <td class="text-right">{{line.product.price | currency:"USD":"symbol":"2.2-2"}}</td>
+                        <td class="text-right">{{line.getLineTotale() | currency:"USD":"symbol":"2.2-2"}}</td>
+                        <td class="text-center">
+                        <button class="btn btn-sm btn-danger" (click)="cart.removeLine(line.product.id)">Remove</button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4" class="text-right">Total:</td>
+                        <td class="text-right">{{cart.getCartTotal() | currency:"USD":"symbol":"2.2-2"}}</td>
+                    </tr>
+                </tfoot>
+            </table>
+         </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="mb-4 text-center">
+                <button type="button" class="btn btn-primary mt-1" routerLink="/store">Continue Shopping</button>
+                <button type="button" class="btn btn-secondary m-1" routerLink="/checkout" [disabled]="cart.lines.length === 0">Checkout</button>
+             </div>
+        </div>
+    </div>
+
+</div>

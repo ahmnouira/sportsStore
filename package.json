@@ -1,7 +1,7 @@
 {
   "name": "sports-store",
   "version": "1.0.0",
-  "description" : "ch7: sportsStore: A Real Application",
+  "description": "ch7: sportsStore: A Real Application",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,7 +9,6 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
-   
   },
   "private": true,
   "dependencies": {
