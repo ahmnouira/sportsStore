@@ -1,7 +1,19 @@
 {
   "name": "sports-store",
-  "version": "1.0.0",
-  "description": "ch7: sportsStore: A Real Application",
+  "version": "1.0.2",
+  "description": "ch7-ch8: sportsStore: A Real Application, Orders and Checkout",
+  "author": {
+    "email": "amnouira@gmail.com",
+    "name": "Ahmed Nouira"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmnouira/sportsStore.git"
+  },
+  "keywords": [
+    "e-commerce", "shopping", "e-commerce platform"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
