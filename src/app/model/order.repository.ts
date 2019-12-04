@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
-import { Order } from './order.mdel';
-import { StaticDataSource } from './static.datasource';
+import { Order } from './order.model';
 import { Observable } from 'rxjs';
+import { RestDataSource } from '../services/reset.datasource';
 
 
 @Injectable() 
@@ -9,7 +9,7 @@ export class OrderRepository {
 
     private orders : Order[] =[];
 
-    constructor(private dataSource : StaticDataSource ) {
+    constructor(private dataSource : RestDataSource ) {
         
     }
 

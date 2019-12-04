@@ -7,8 +7,9 @@ import { CartCheckoutComponent } from './store/cart-checkout/cart-checkout.compo
 const routes: Routes = [
   
   {path: 'store', component: StoreComponent },
-  {path : 'cart' , component: CartDetailsComponent},
+  {path: 'cart' , component: CartDetailsComponent},
   {path: 'checkout', component: CartCheckoutComponent},
+  {path: 'admin', loadChildren: "./auth/auth.module#AuthModule"}, // use a dynamically loaded module
   {path: '**', redirectTo: '/store'}
      
 ];
@@ -18,4 +19,5 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule {
+  
  }

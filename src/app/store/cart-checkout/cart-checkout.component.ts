@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { Order } from 'src/app/model/order.mdel';
+import { Order } from 'src/app/model/order.model';
 import { NgForm } from '@angular/forms';
 import { OrderRepository } from 'src/app/model/order.repository';
 @Component({

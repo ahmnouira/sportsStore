@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div class="row">
+  <div class="row bg-dark">
     <div class="col">
       <h1 class="pl-4 font-weight-bolder">
         <a routerLink="/store" class="navbar-brand"> Welcome to SPORT STORE </a>
@@ -12,11 +12,13 @@
   </div>
 
   <div class="row mt-2">
-    <div class="col-md-4 p-3 bg-light">
+    <div class="col-md-4 p-3 bg-dark">
       <button type="button" name="button" class="btn btn-block btn-outline-primary" (click)="changeCategory()"> Home </button>
       <button type="button" *ngFor="let cat of categories" class="btn btn-outline-primary btn-block" [class.active]="cat==selectedCategory" (click)="changeCategory(cat)">
         {{ cat }}
       </button>
+      <!-- to go to admin auth page -->
+      <button type="button" class="btn btn-danger btn-block mt-3" routerLink="/admin">Admin</button>
     </div>
     <div class="col-md-8">
       <div *ngFor="let product of products" class="mb-2 media bg-light">
